@@ -26,16 +26,13 @@ const startServer = async () => {
 
   app.use(
     expressMiddleware(server, {
-      // ready code for authentication
       context: async (contextValue) => {
         const {
           req: { headers },
         } = contextValue;
 
-        console.log(headers);
-
         return {
-          ...contextValue,
+          token: headers.token,
         };
       },
     })
