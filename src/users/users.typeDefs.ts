@@ -3,14 +3,14 @@ const typeDefs = `#graphql
         id: ID!
         userId: String!
         password: String!
+        email: String!
+        image: String
+        createdAt: String!
+        role: String!
     }
 
     type Query {
         allUsers: [User]!
-    }
-
-    type Mutation {
-        createUser(userId: String!, password: String!): MutationResponse!
     }
 `;
 

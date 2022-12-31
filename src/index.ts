@@ -1,4 +1,7 @@
-import { ApolloServer, BaseContext } from "@apollo/server";
+import dotenv from "dotenv";
+dotenv.config();
+import "module-alias/register";
+import { ApolloServer } from "@apollo/server";
 import { expressMiddleware } from "@apollo/server/express4";
 import { ApolloServerPluginDrainHttpServer } from "@apollo/server/plugin/drainHttpServer";
 import express from "express";
@@ -7,7 +10,7 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import compression from "compression";
 import morgan from "morgan";
-import schema from "./schema";
+import schema from "@src/schema";
 
 const startServer = async () => {
   const app = express();
