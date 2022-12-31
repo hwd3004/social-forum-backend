@@ -10,7 +10,7 @@ const typeDefs = `#graphql
     }
 
     type Mutation {
-        createUser(userId: String!, password: String!): Boolean!
+        createUser(userId: String!, password: String!): MutationResponse!
     }
 `;
 
