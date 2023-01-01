@@ -36,6 +36,7 @@ const startServer = async () => {
   await server.start();
 
   app.use(
+    "/api/graphql",
     expressMiddleware(server, {
       context: async (contextValue) => {
         const {
@@ -50,7 +51,7 @@ const startServer = async () => {
   );
 
   httpServer.listen({ port: 4000 }, () => {
-    console.log(`🚀 Server ready at http://localhost:4000`);
+    console.log(`🚀 Server ready at http://localhost:4000/api/graphql`);
   });
 };
 
