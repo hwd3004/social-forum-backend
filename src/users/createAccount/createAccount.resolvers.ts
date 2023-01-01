@@ -8,11 +8,11 @@ export default {
   Mutation: {
     createAccount: async (_parent, args: User, _contextValue, _info): Promise<MutationResponse> => {
       try {
-        const { userId, password, email } = args;
+        const { username, password, email } = args;
 
         await prisma.user.create({
           data: {
-            userId,
+            username,
             password: await bcrypt.hash(password, 10),
             email,
           },
@@ -23,6 +23,8 @@ export default {
           message: "User created successfully",
         };
       } catch (error) {
+        console.log(error);
+
         // https://www.prisma.io/docs/reference/api-reference/error-reference
         // https://www.prisma.io/docs/concepts/components/prisma-client/handling-exceptions-and-errors
         if (error instanceof PrismaClientKnownRequestError) {
@@ -30,7 +32,7 @@ export default {
           const meta = error.meta as any;
 
           const responseObj = {
-            userId: "Id already exists",
+            username: "Username already exists",
             email: "Email already exists",
           };
 

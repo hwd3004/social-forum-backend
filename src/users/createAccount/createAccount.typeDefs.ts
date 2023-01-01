@@ -1,6 +1,6 @@
 const typeDefs = `#graphql
     type Mutation {
-        createAccount(userId: String!, password: String!, email: String!): MutationResponse!
+        createAccount(username: String!, password: String!, email: String!): MutationResponse!
     }
 `;
 

@@ -1,6 +1,6 @@
 const typeDefs = `#graphql
     type Query {
-        login(userId: String!, password: String!): MutationResponse!
+        login(username: String!, password: String!): MutationResponse!
     }
 `;
 

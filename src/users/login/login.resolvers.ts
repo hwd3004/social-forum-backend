@@ -7,11 +7,11 @@ import jwt from "jsonwebtoken";
 export default {
   Query: {
     login: async (_parent, args: User, _contextValue, _info): Promise<MutationResponse> => {
-      const { userId, password } = args;
+      const { username, password } = args;
 
       const user = await prisma.user.findUnique({
         where: {
-          userId,
+          username,
         },
       });
 

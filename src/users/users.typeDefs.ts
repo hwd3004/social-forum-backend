@@ -1,7 +1,7 @@
 const typeDefs = `#graphql
     type User {
         id: ID!
-        userId: String!
+        username: String!
         password: String!
         email: String!
         image: String
