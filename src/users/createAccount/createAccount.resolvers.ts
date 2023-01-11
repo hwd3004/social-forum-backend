@@ -23,8 +23,6 @@ export default {
           message: "User created successfully",
         };
       } catch (error) {
-        console.log(error);
-
         // https://www.prisma.io/docs/reference/api-reference/error-reference
         // https://www.prisma.io/docs/concepts/components/prisma-client/handling-exceptions-and-errors
         if (error instanceof PrismaClientKnownRequestError) {
@@ -45,6 +43,8 @@ export default {
             }
           }
         }
+
+        console.trace(error);
 
         return {
           success: false,
