@@ -7,6 +7,11 @@ const typeDefs = `#graphql
         createdAt: String!
         published: Boolean!
     }
+
+    type Query {
+        topics: [Topic!]!
+        topic(id: Int!): Topic!
+    }
 `;
 
 export default typeDefs;

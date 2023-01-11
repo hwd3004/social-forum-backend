@@ -6,7 +6,7 @@ import { PrismaClientKnownRequestError } from "@prisma/client/runtime";
 
 export default {
   Mutation: {
-    createAccount: async (_parent, args: User, _contextValue, _info): Promise<MutationResponse> => {
+    createAccount: async (_parent, args: User, _context, _info): Promise<MutationResponse> => {
       try {
         const { username, password, email } = args;
 

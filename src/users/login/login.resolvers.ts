@@ -6,7 +6,7 @@ import jwt from "jsonwebtoken";
 
 export default {
   Query: {
-    login: async (_parent, args: User, _contextValue, _info): Promise<MutationResponse> => {
+    login: async (_parent, args: User, _context, _info): Promise<MutationResponse> => {
       const { username, password } = args;
 
       const user = await prisma.user.findUnique({
